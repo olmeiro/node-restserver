@@ -8,7 +8,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // To parse the incoming requests with JSON payloads
 
-app.use(require("./routes/usuario"));
+//Configuración global de rutas:
+app.use(require("./routes/index"));
 
 mongoose.connect(
   // "mongodb://localhost:27017/cafe",
