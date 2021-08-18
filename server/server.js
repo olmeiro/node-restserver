@@ -1,7 +1,6 @@
 require("./config/config");
 
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -12,7 +11,8 @@ app.use(express.json()); // To parse the incoming requests with JSON payloads
 app.use(require("./routes/usuario"));
 
 mongoose.connect(
-  "mongodb://localhost:27017/cafe",
+  // "mongodb://localhost:27017/cafe",
+  process.env.URLDB,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
